@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebCL IDE</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" media="screen"
+	href="libs/handsontable/handsontable.css">
+<link rel="stylesheet" href="libs\jstree\themes\default\style.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="text/javascript" src="libs/jquery/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="libs/handsontable/numeral.js"></script>
+<script type="text/javascript" src="libs/handsontable/handsontable.js"></script>
+<script type="text/javascript" src="libs/jstree/jstree.min.js"></script>
+<script type="text/javascript" src="libs/FileSaver/FileSaver.min.js"></script>
+<script type="text/javascript" src="libs/jszip/jszip.min.js"></script>
+
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="api.js"></script>
+<script type="text/javascript" src="gui.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+
+</head>
+<body>
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div id="navbarWrapper" class="container">
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false">Project
+							<span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a onclick="App.getNewProjectName();">New</a></li>
+							<li><a href="#">Load</a></li>
+							<li><a onclick="App.exportProjectEvent();">Export</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul></li>
+					<li>
+					<li><a onclick="App.test();">Test</a></li>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--End Fixed navbar -->
+	<!-- Body container-->
+	<div class="container-fluid">
+		<div id='wrapperDiv' class="row">
+			<div id='navDiv' class="fill col-xs-3 col-sm-3 col-md-2">
+				<div id="explorerTab"></div>
+			</div>
+			<div id="mainDiv" class="fill  col-xs-9 col-sm-9 col-md-10 main">
+				<div id ="contentTab"></div>
+			</div>
+			<!--End Body container-->
+				<!-- Modal HTML -->
+				<div id="basicModal" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-hidden="true">×</button>
+								<h4 class="modal-title">Modal Window</h4>
+							</div>
+							<div class="modal-body"></div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='hide'>
+					 <form id="inputForm" role="form">
+					 	 <div class="form-group">
+                    		<label id="inputForm-inputLabel" for="inputForm-inputText"></label>
+                      		<input type="text" class="form-control" id="inputForm-inputText"/>
+                      		<span id="inputForm-error" class="myerror" ></span>
+                 		</div>
+					 </form>
+				
+					<div id="test">
+						 <form role="form" >
+                			 <div class="form-group">
+                    			<label for="exampleInputEmail1">Email address</label>
+                      			<input type="email" class="form-control"id="exampleInputEmail1" placeholder="Enter email"/>
+                 			 </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control"
+                          id="exampleInputPassword1" placeholder="Password"/>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                        <input type="checkbox"/> Check me out
+                    </label>
+                  </div>
+                </form>
+					</div>
+				</div>
+				<!--End Modal HTML -->
+</body>
+</html>

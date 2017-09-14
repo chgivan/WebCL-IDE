@@ -1,0 +1,47 @@
+.hide {
+    display: none;
+}
+body {
+  padding-top: 50px;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+#navbarWrapper{
+	margin-left: 0;
+}
+
+.explorerTabs {
+}
+
+.fill{
+	position: fixed;
+	overflow-x: hidden;
+    overflow-y: hidden;
+    display: block;
+}
+
+#navDiv{
+	min-height:100%;
+	padding:0;
+	border-right:1px solid blue; 
+}
+
+#mainDiv{
+	right: 0;
+	min-height:100%;
+}
+
+.myerror{
+	color:red;
+}
+
+		
+}
+
